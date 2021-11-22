@@ -4,8 +4,8 @@ class Application {
     constructor() {
         this.canvas = document.getElementById('canvas')
         this.ctx = canvas.getContext('2d');
-        this.canvas.width = 1000;
-        this.canvas.height = 700;
+        this.canvas.width = 600;
+        this.canvas.height = 600;
         this.arr = [];
     }
 
@@ -21,5 +21,3 @@ class Application {
 }
 const app = new Application()
 app.generateRectangles();
-
-
