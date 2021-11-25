@@ -8,12 +8,10 @@ class Application {
     generateRectangles() {
         let rectangle = new Rectangle();
         rectangle.draw();
-        }
+    }
 
 }
 
+
 const app = new Application();
 app.generateRectangles();
-
-
-
