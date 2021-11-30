@@ -1,6 +1,6 @@
-class Rectangle {
+class Tile {
     constructor() {
-        this.ctx = canvas.getContext('2d');
+        this.ctx = ctx;
         this.cw = canvas.width;
         this.ch = canvas.height;
         this.cols = 5;
@@ -24,4 +24,4 @@ class Rectangle {
     }
 }
 
-export default Rectangle;
+export default Tile;

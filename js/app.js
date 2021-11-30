@@ -1,4 +1,4 @@
-import Rectangle from './rectangle.js';
+import Tile from './tile.js';
 import FPS from './fps.js';
 
 class Application {
@@ -6,14 +6,14 @@ class Application {
         this.canvas = document.getElementById('canvas');
         this.ctx = canvas.getContext('2d');
     }
-    generateRectangles() {
+    Run() {
         let rectangle = new Rectangle();
-        rectangle.draw();
+        rectangle.draw(this.ctx);
     }
 }
 
 const app = new Application();
-app.generateRectangles();
+app.Run();
 
 var fps = new FPS();
 fps.start();
