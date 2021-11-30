@@ -7,8 +7,8 @@ class Application {
         this.ctx = canvas.getContext('2d');
     }
     Run() {
-        let rectangle = new Rectangle();
-        rectangle.draw(this.ctx);
+        let tile = new Tile(this.ctx);
+        tile.draw();
     }
 }
 
