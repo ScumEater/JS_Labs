@@ -13,10 +13,6 @@ class Application {
     }
 }
 const app = new Application();
-
-
-
-requestAnimationFrame(Animation);
 app.Run();
 
 
