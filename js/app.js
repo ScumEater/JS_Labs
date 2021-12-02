@@ -9,11 +9,22 @@ class Application {
     Run() {
         let tile = new Tile(this.ctx);
         tile.draw();
+
     }
 }
-
 const app = new Application();
-app.Run();
+
+
+
+requestAnimationFrame(Animation);
+
+function Animation() {
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    app.Run();
+    requestAnimationFrame(Animation);
+}
 
 var fps = new FPS();
 fps.start();
+
