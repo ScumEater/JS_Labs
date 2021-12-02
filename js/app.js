@@ -14,11 +14,12 @@ class Application {
 }
 const app = new Application();
 
-
-
-requestAnimationFrame(Animation);
-app.Run();
-
+function Animation() {
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    app.Run();
+    requestAnimationFrame(Animation);
+}
 
 var fps = new FPS();
 fps.start();
