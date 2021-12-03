@@ -5,8 +5,7 @@ class Application {
         this.ctx = canvas.getContext('2d');
         this.matrixTile = new MatrixTile(this.ctx);
     }
-    Run() {
-
+    run() {
 
         this.animate();
     }
@@ -14,8 +13,9 @@ class Application {
     animate() {
         this.matrixTile.draw();
         requestAnimationFrame(this.animate.bind(this));
+
         }
 
 }
 
-new Application().Run();
+new Application().run();

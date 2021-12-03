@@ -1,0 +1,33 @@
+@startuml
+
+
+class Application {
+   -CanvasRenderingContext2D ctx
+   -matrixTile(this.ctx)
++constructor()
+}
+
+class matrixTile
+{
+    +constructor(ctx)
+    -CanvasRenderingContext2D ctx
+    -Number cw;
+    -Number ch;
+    -Number cols;
+    -Number rows;
+    -Number padding;
+    -Number w;
+    -Number h;
+}
+
+class Color_Utils {
+    +generateColor()
+}
+
+matrixTile *-- Application
+matrixTile --> Color_Utils
+
+
+
+
+@enduml
