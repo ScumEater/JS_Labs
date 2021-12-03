@@ -1,4 +1,4 @@
-import ColorUtils from './color_utils.js';
+import Color_Utils from './color_utils.js';
 
 
 class MatrixTile {
@@ -11,20 +11,18 @@ class MatrixTile {
         this.padding = 10;
         this.w = (this.cw - this.padding * this.cols) / this.cols;
         this.h = (this.ch - this.padding * this.rows) / this.rows;
-
-        draw()
-        {
-            this.ctx.translate(-10, 10);
+    }
+        draw() {
+            let color = new Color_Utils();
+            this.ctx.translate(100, 7);
             for (let y = 0; y < this.rows; y++) {
                 for (let x = 0; x < this.cols; x++) {
-                    this.ctx.fillStyle = ColorUtils;
+                    this.ctx.fillStyle = color.generateColor();
                     this.ctx.fillRect(x * (this.w + this.padding), y * (this.h + this.padding), this.w, this.h);
-                    this.ctx.rotate(0.00001);
-                    this.ctx.clearRect(10, 10, 500, 500);
+                    this.ctx.rotate(0.001);
                 }
             }
         }
-    }
 }
 
 

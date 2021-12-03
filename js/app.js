@@ -1,28 +1,21 @@
 import MatrixTile from './matrixTile.js';
-import FPS from './fps.js';
 
 class Application {
     constructor() {
-        this.canvas = document.getElementById('canvas');
         this.ctx = canvas.getContext('2d');
+        this.matrixTile = new MatrixTile(this.ctx);
     }
     Run() {
-        let tile = new MatrixTile(this.ctx);
-        tile.draw();
+
+
+        this.animate();
     }
 
-    RunAnimateTiles(ctx, canvas) {
-        requestAnimationFrame(Animation);
-        function Animation() {
-            app.Run();
-            requestAnimationFrame(Animation);
+    animate() {
+        this.matrixTile.draw();
+        requestAnimationFrame(this.animate.bind(this));
         }
-    }
 
 }
-const app = new Application();
-app.RunAnimateTiles();
 
-var fps = new FPS();
-fps.start();
-
+new Application().Run();
