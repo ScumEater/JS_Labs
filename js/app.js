@@ -1,4 +1,4 @@
-import Tile from './tile.js';
+import MatrixTile from './matrixTile.js';
 import FPS from './fps.js';
 
 class Application {
@@ -7,7 +7,7 @@ class Application {
         this.ctx = canvas.getContext('2d');
     }
     Run() {
-        let tile = new Tile(this.ctx);
+        let tile = new MatrixTile(this.ctx);
         tile.draw();
     }
 
