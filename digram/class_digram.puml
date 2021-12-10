@@ -1,33 +1,45 @@
 @startuml
 
-
 class Application {
    -CanvasRenderingContext2D ctx
    -matrixTile(this.ctx)
-+constructor()
+   +constructor()
+   +run()
+   +animate()
+   +drawGrid()
+   +drawFPS();
+   -boolean debugMode;
+   -Number screenWidth;
+   -Number screenHeight;
+   -Number matrixTile;
 }
 
 class matrixTile
 {
-    +constructor(ctx)
+    +constructor()
+    +getTiles()
+    +draw()
     -CanvasRenderingContext2D ctx
-    -Number cw;
-    -Number ch;
-    -Number cols;
-    -Number rows;
-    -Number padding;
-    -Number w;
-    -Number h;
+    -Number n;
+    -Number tileEdge;
+    -Number tilePadding;
+    -method getTiles();
 }
 
-class Color_Utils {
-    +generateColor()
+class Tile {
+    +constructor(ctx, tileWidth, x, y)
+    +setColor()
+    +setAngle()
+    +draw();
+    -CanvasRenderingContext2D ctx
+    -Number x;
+    -Number y;
+    -Number width;
+    -Number height;
+    -String color;
 }
 
 matrixTile *-- Application
-matrixTile --> Color_Utils
-
-
-
+matrixTile --> Tile
 
 @enduml
