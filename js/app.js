@@ -1,66 +1,44 @@
+import Star from "/js/star.js";
 
-import MatrixTile from "./matrixTile.js";
+class StarFiled {
 
-class Application {
     constructor() {
-        this.debugMode = true;
-        this.canvas = document.getElementById('canvas');
-        this.ctx = this.canvas.getContext('2d');
-        this.screenWidth = this.canvas.width;
-        this.screenHeight = this.canvas.height;
-        this.matrixTile = new MatrixTile(this.ctx, 10, 25, 10);
+        this.canvas = document.getElementById("canvas");
+        this.ctx = this.canvas.getContext("2d");
+        this.canvas.width = 1920;
+        this.canvas.height = 1080;
+        this.numStars = 700;
+        this.pushingstar = this.pushingStar();
     }
 
-    run(debug) {
-        if(debug) {
-        console.log(debug);
+    pushingStar() {
+        let stars = [];
+        for (let i = 0; i < this.numStars; i++) {
+            stars[i] = new Star();
+            console.log(stars);
         }
-        this.animate();
-    }
-    animate() {
-        this.ctx.clearRect(0, 0, this.screenWidth, this.screenHeight);
-        this.ctx.save();
-        this.ctx.translate(this.screenWidth / 2, this.screenHeight / 2);
-        this.matrixTile.draw();
-        this.ctx.restore();
-        if (this.debugMode) {
-            this.drawGrid();
-            this.drawFPS();
-        }
-        requestAnimationFrame(() => this.animate());
+        return stars;
 
     }
-    drawGrid() {
-        this.ctx.strokeStyle = "green";
-        this.ctx.beginPath();
-        this.ctx.moveTo(this.screenWidth/2 ,0);
-        this.ctx.lineTo(this.screenWidth/2, this.screenHeight);
-        this.ctx.stroke();
-        this.ctx.moveTo(0,this.screenHeight/2);
-        this.ctx.lineTo(this.screenWidth, this.screenHeight/2);
-        this.ctx.stroke();
+
+    draw() {
+
+        this.ctx.fillStyle = "black";
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        for (let i = 0; i < this.numStars; i++) {
+            this.pushingstar[i].show();
+            this.pushingstar[i].move();
+        }
     }
-     drawFPS() {
-        this.ctx.font = "14px Verdana";
-        this.ctx.fillStyle = "white";
-        this.ctx.fillText(`FPS: ${this.fps}`, this.screenWidth - 90, 20);
-        this.ctx.fillText(`Time: 10`, this.screenWidth - 90, 40);
+
+    update() {
+        this.draw();
+        window.requestAnimationFrame(() => this.update());
+    }
+    run(){
+        this.update();
     }
 }
-window.addEventListener("load", function (event) {
-    let app = new Application();
-    app.run(true);
-});
 
-var before,now,fps;
-before=Date.now();
-fps=0;
-requestAnimationFrame(
-    function loop(){
-        now=Date.now();
-        fps=Math.round(1000/(now-before));
-        before=now;
-        requestAnimationFrame(loop);
-        console.log(fps);
-    }
-);
+let app = new StarFiled();
+app.run();
