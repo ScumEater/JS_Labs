@@ -20,7 +20,6 @@ class StarFiled {
         return stars;
 
     }
-
     draw() {
 
         this.ctx.fillStyle = "black";
@@ -31,12 +30,12 @@ class StarFiled {
         }
     }
 
-    update() {
+    animate() {
         this.draw();
-        window.requestAnimationFrame(() => this.update());
+        window.requestAnimationFrame(() => this.animate());
     }
     run(){
-        this.update();
+        this.animate();
     }
 }
 

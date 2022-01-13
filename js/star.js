@@ -1,14 +1,14 @@
 class Star {
-    constructor(ctx) {
+    constructor() {
         this.canvas = document.getElementById("canvas");
         this.ctx = this.canvas.getContext("2d");
         this.x = Math.random() * this.canvas.width;
         this.y = Math.random() * this.canvas.width;
         this.z = Math.random() * this.canvas.width;
-        this.size = 0.4;
+        this.size = 1;
         this.centerX = this.canvas.width / 2;
         this.centerY = this.canvas.height / 2;
-        this.speed = 3;
+        this.speed = 5;
     }
     move() {
         this.z = this.z - this.speed;
