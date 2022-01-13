@@ -39,5 +39,5 @@ class StarFiled {
     }
 }
 
-let app = new StarFiled();
-app.run();
+let starfield = new StarFiled();
+starfield.run();
