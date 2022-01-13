@@ -1,13 +1,13 @@
 import Star from "/js/star.js";
 
-class StarFiled {
+class Starfield {
 
     constructor() {
         this.canvas = document.getElementById("canvas");
         this.ctx = this.canvas.getContext("2d");
         this.canvas.width = 1920;
         this.canvas.height = 1080;
-        this.numStars = 700;
+        this.numStars = 1700;
         this.pushingstar = this.pushingStar();
     }
 
@@ -15,13 +15,11 @@ class StarFiled {
         let stars = [];
         for (let i = 0; i < this.numStars; i++) {
             stars[i] = new Star();
-            console.log(stars);
         }
         return stars;
 
     }
     draw() {
-
         this.ctx.fillStyle = "black";
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         for (let i = 0; i < this.numStars; i++) {
@@ -39,5 +37,6 @@ class StarFiled {
     }
 }
 
-let starfield = new StarFiled();
+
+let starfield = new Starfield();
 starfield.run();
