@@ -1,22 +1,34 @@
-let ReplaceBackground = function() {
-    document.body.style.backgroundImage = 'url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/4eba9c129042145.6163027e42968.jpg)';
+function getStyle(hexcolor) {
+    return `background-color: #${hexcolor};`;
 }
 
 
+let color = {
+    r: 244,
+    g: 150,
+    b: 23
+}
+
+let hexcolor = color.r.toString(16) + color.g.toString(16) + color.b.toString(16);
+
 B = document.body;
-B = document.getElementById("application");
-document.addEventListener("DOMContentLoaded", ReplaceBackground);
+B = document.getElementById('bg');
+B.setAttribute("style", getStyle(hexcolor));
+
+D = document.body;
+D = document.getElementById("application");
+
 
 
 let input_a = document.createElement("input")
 input_a.setAttribute("id", "input_a");
-B.append(input_a);
+D.append(input_a);
 
 let input_b = document.createElement("input")
 input_b.setAttribute("id", "input_b");
-B.append(input_b);
+D.append(input_b);
 
-B = document.getElementById("application");
+D = document.getElementById("application");
 
 
 let add = (a,b) => {
@@ -33,13 +45,12 @@ let foo = () => {
 let result_button = document.createElement("button")
 result_button.innerText = "Рассчитать";
 result_button.onclick = foo;
-B.append(result_button);
+D.append(result_button);
 
 
 let result_ti = document.createElement("h3")
 result_ti.setAttribute("id", "result");
 result_ti.innerText = "Нет значения";
-B.append(result_ti);
-
+D.append(result_ti);
 
 
