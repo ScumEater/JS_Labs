@@ -33,12 +33,7 @@ class Star {
         this.ctx.shadowBlur = 15;
         this.ctx.shadowColor = "green";
         this.ctx.fillRect(x, y, s, s);
-
         this.ctx.fill();
-
-
-
-
     }
 
 }

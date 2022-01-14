@@ -1,45 +1,35 @@
 @startuml
 
-class Application {
+class Starfield {
    -CanvasRenderingContext2D ctx
-   -matrixTile(this.ctx)
-   +constructor()
-   +run()
-   +animate()
-   +drawGrid()
-   +drawFPS();
-   -boolean debugMode;
-   -Number screenWidth;
-   -Number screenHeight;
-   -Number matrixTile;
+   +constructor();
+   +pushingStar();
+   +draw();
+   +animate();
+   +run();
+   -ctx;
+   -canvas.Width;
+   -canvas.Height;
+   -numStar;
+   -pushingStar;
 }
 
-class matrixTile
-{
-    +constructor()
-    +getTiles()
-    +draw()
-    -CanvasRenderingContext2D ctx
-    -Number n;
-    -Number tileEdge;
-    -Number tilePadding;
-    -method getTiles();
+class Star {
+    +constructor();
+    +move();
+    +show();
+    -CanvasRenderingContext2D ctx;
+    -ctx;
+    -size;
+    -x;
+    -y;
+    -z;
+    -size;
+    -speed;
+    centerX;
+    centerY;
 }
 
-class Tile {
-    +constructor(ctx, tileWidth, x, y)
-    +setColor()
-    +setAngle()
-    +draw();
-    -CanvasRenderingContext2D ctx
-    -Number x;
-    -Number y;
-    -Number width;
-    -Number height;
-    -String color;
-}
-
-matrixTile *-- Application
-matrixTile --> Tile
+Star *-- Starfield
 
 @enduml
