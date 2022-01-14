@@ -5,10 +5,10 @@ class Star {
         this.x = Math.random() * this.canvas.width;
         this.y = Math.random() * this.canvas.width;
         this.z = Math.random() * this.canvas.width;
-        this.size = 1;
+        this.size = 5;
         this.centerX = this.canvas.width / 2;
         this.centerY = this.canvas.height / 2;
-        this.speed = 5;
+        this.speed = 7;
     }
     move() {
         this.z = this.z - this.speed;
@@ -27,10 +27,18 @@ class Star {
 
         s = this.size * (this.canvas.width / this.z);
 
+
         this.ctx.beginPath();
-        this.ctx.fillStyle = "white";
-        this.ctx.arc(x, y, s, 0, Math.PI * 2);
+        this.ctx.fillStyle = "#00996699";
+        this.ctx.shadowBlur = 15;
+        this.ctx.shadowColor = "green";
+        this.ctx.fillRect(x, y, s, s);
+
         this.ctx.fill();
+
+
+
+
     }
 
 }

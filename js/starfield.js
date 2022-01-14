@@ -7,7 +7,7 @@ class Starfield {
         this.ctx = this.canvas.getContext("2d");
         this.canvas.width = 1920;
         this.canvas.height = 1080;
-        this.numStars = 1700;
+        this.numStars = 5700;
         this.pushingstar = this.pushingStar();
     }
 
