@@ -10,6 +10,8 @@ let color = {
 }
 
 let hexcolor = color.r.toString(16) + color.g.toString(16) + color.b.toString(16);
+console.log(hexcolor);
+
 
 B = document.body;
 B = document.getElementById('bg');
