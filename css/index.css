@@ -1,3 +1,41 @@
 body {
     background-size: cover;
 }
+
+div {
+    alignment: center;
+    width: 300px;
+    height: 300px;
+}
+
+input {
+    text-align: center;
+    font-family: "Ubuntu";
+    width: 20%;
+    padding: 8px;
+    margin-left: 860px;
+    margin-right: 75px;
+    margin-top: 50px;
+    margin-bottom: 0.5%;
+    box-sizing: border-box;
+    color: yellow;
+    background: black;
+}
+
+button {
+    alignment: center;
+    margin-left: 850px;
+    margin-top: 20px;
+    font-family: "Ubuntu";
+    background: black;
+    color: yellow;
+}
+
+h3 {
+    color: yellow;
+    font-family: "Ubuntu";
+    text-align: justify;
+    text-shadow: 0 1.5px 0 rgba(25,0,0,0.5);
+    font-size: 25px;
+    margin-left: 880px;
+}
