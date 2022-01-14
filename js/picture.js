@@ -5,7 +5,7 @@ canvas.height = 800;
 
 
 ctx.beginPath();
-ctx.strokeStyle = 'white';
+ctx.strokeStyle = '#0A0B12';
 ctx.lineWidth = 5;
 ctx.moveTo(canvas.width / 2, canvas.height / 2);
 ctx.lineTo(Math.round(Math.random()) * (canvas.width / 2) + 150, Math.round(Math.random()) * (canvas.height / 2) + 150);
